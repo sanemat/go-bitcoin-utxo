@@ -24,8 +24,8 @@ func buildCommand(fileName string, commandName string) (string, error) {
 	return builtFile, nil
 }
 
-func buildUxto() {
-	if out, err := buildCommand(filepath.Join("cmd", "uxto", "main.go"), "uxto"); err != nil {
+func buildUtxo() {
+	if out, err := buildCommand(filepath.Join("cmd", "utxo", "main.go"), "utxo"); err != nil {
 		log.Fatal(err)
 	} else {
 		fmt.Println(out)
@@ -39,8 +39,8 @@ func exists(filename string) bool {
 
 func clean() {
 	files := []string{
-		filepath.Join("out", "uxto.exe"),
-		filepath.Join("out", "uxto"),
+		filepath.Join("out", "utxo.exe"),
+		filepath.Join("out", "utxo"),
 	}
 	for _, name := range files {
 		if exists(name) {
@@ -113,7 +113,7 @@ func main() {
 
 	switch action {
 	case "build":
-		buildUxto()
+		buildUtxo()
 	case "clean":
 		clean()
 	case "fmt":
