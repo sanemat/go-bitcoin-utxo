@@ -25,7 +25,7 @@ func buildCommand(fileName string, commandName string) (string, error) {
 }
 
 func buildUxto() {
-	if out, err := buildCommand(filepath.Join("cmd", "uxto", "maom.go"), "uxto"); err != nil {
+	if out, err := buildCommand(filepath.Join("cmd", "uxto", "main.go"), "uxto"); err != nil {
 		log.Fatal(err)
 	} else {
 		fmt.Println(out)
@@ -64,12 +64,6 @@ func fmtAll() {
 
 func beforeScript() {
 	var comm []string
-	comm = []string{"go", "get", "golang.org/x/tools/cmd/vet"}
-	if out, err := exec.Command(comm[0], comm[1:]...).Output(); err != nil {
-		log.Fatal(err)
-	} else {
-		fmt.Print(string(out))
-	}
 	comm = []string{"go", "get", "golang.org/x/tools/cmd/goimports"}
 	if out, err := exec.Command(comm[0], comm[1:]...).Output(); err != nil {
 		log.Fatal(err)

@@ -1,1 +1,1 @@
-package bitcoin_utxo
+package bitcoinutxo

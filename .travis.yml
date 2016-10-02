@@ -1,0 +1,9 @@
+language: go
+go:
+  - 1.7.1
+install:
+  - go run _tools/build/make.go build
+before_script:
+  - go run _tools/build/make.go beforescript
+script:
+  - go run _tools/build/make.go script
