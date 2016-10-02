@@ -1,12 +1,12 @@
 package main
 
 import (
-	"os"
-	"runtime"
-	"path/filepath"
-	"os/exec"
-	"log"
 	"fmt"
+	"log"
+	"os"
+	"os/exec"
+	"path/filepath"
+	"runtime"
 )
 
 func buildCommand(fileName string, commandName string) (string, error) {
